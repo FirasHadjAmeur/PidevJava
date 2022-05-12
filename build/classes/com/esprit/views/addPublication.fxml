@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.AddPublicationController">
+    <stylesheets>
+        <URL value="@addpublication.css" />
+    </stylesheets>
+    <children>
+      <VBox layoutX="6.0" layoutY="7.0" prefHeight="367.0" prefWidth="388.0" spacing="20.0">
+         <children>
+            <Label text="Ajouter une nouvelle publication">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="100.0" text="Titre">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="titleTxf" prefHeight="25.0" prefWidth="219.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="19.0" prefWidth="100.0" text="Contenu">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="contentTxa" prefHeight="78.0" prefWidth="219.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="170.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="100.0" text="Image">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+                  <VBox prefHeight="200.0" prefWidth="219.0">
+                     <children>
+                        <Button fx:id="addImagebtn" mnemonicParsing="false" onAction="#addImage" text="Ajouter une image" />
+                        <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label fx:id="idPublication" opacity="0.0" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="addPubBtn" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#addPublication" text="Ajouter" translateX="210.0" />
+                  <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#cancelAdd" text="Annuler" translateX="220.0" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

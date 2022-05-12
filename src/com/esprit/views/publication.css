@@ -1,0 +1,9 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.publication {
+    background-color: blue;
+    -fx-border-color: #655e5d;
+    border-width: 40px;
+}

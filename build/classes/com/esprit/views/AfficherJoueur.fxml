@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" minHeight="555.0" minWidth="699.0" prefHeight="555.0" prefWidth="805.0" style="-fx-background-color: #9EBFAD;" stylesheets="@MainStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.AfficherJoueurController">
+   <children>
+      <AnchorPane minHeight="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <StackPane prefHeight="70.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Text boundsType="LOGICAL_VERTICAL_CENTER" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Les Joueurs" textAlignment="JUSTIFY" textOrigin="CENTER">
+                     <font>
+                        <Font name="Arial Bold" size="23.0" />
+                     </font>
+                  </Text>
+               </children>
+            </StackPane>
+            <Button fx:id="btnAjout" layoutX="536.0" layoutY="10.0" mnemonicParsing="false" onAction="#ajouterJoueur" prefHeight="30.0" prefWidth="160.0" text="Ajouter un Joueur" textAlignment="CENTER" wrapText="true" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <styleClass>
+                  <String fx:value="white-button" />
+                  <String fx:value="border-gray" />
+               </styleClass>
+            </Button>
+         </children>
+         <styleClass>
+            <String fx:value="background-light" />
+            <String fx:value="border-gray" />
+         </styleClass>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPane" prefHeight="465.0" prefWidth="522.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="368.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <TableView fx:id="idTableau" layoutX="10.0" layoutY="58.0" onMouseClicked="#changerJoueurActuelle" prefHeight="407.0" prefWidth="651.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="58.0">
+               <columns>
+                  <TableColumn fx:id="columnNom" prefWidth="95.0" text="Nom" />
+                  <TableColumn fx:id="columnPrenom" prefWidth="96.0" text="Prenom" />
+                  <TableColumn fx:id="columnEmail" minWidth="80.0" prefWidth="164.79998779296875" text="Email" />
+                  <TableColumn fx:id="columnNumero" minWidth="80.0" prefWidth="94.4000244140625" text="Numero" />
+                  <TableColumn fx:id="columnNbrPartie" prefWidth="72.00009155273438" text="Nbr Parties" />
+                  <TableColumn fx:id="columnEquipe" prefWidth="127.20001220703125" text="Equipe" />
+               </columns>
+            </TableView>
+            <TextField fx:id="txrecherche" layoutX="16.0" layoutY="10.0" prefHeight="31.0" prefWidth="193.0" promptText="chercher un joueur" styleClass="form-control-white" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Button fx:id="btnModifier" mnemonicParsing="false" onAction="#Modifier" prefHeight="51.0" prefWidth="98.0" styleClass="success-button" stylesheets="@MainStyle.css" text="Modifier" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
+            <Button fx:id="btnSupprimer" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#supp" prefHeight="51.0" prefWidth="98.0" styleClass="success-button" stylesheets="@MainStyle.css" text="Supprimer" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0" />
+            <Text fx:id="textEquipeIdActuelle" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="btnAjout1" layoutX="681.0" layoutY="77.0" mnemonicParsing="false" onAction="#AfficherEquipe" prefHeight="58.0" prefWidth="111.0" text="Afficher tous les equipes" textAlignment="CENTER" wrapText="true">
+         <styleClass>
+            <String fx:value="white-button" />
+            <String fx:value="border-gray" />
+         </styleClass>
+      </Button>
+   </children>
+</AnchorPane>

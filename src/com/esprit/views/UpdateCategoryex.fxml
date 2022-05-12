@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.UpdateCategoryexController">
+   <children>
+      <Label layoutX="65.0" layoutY="85.0" prefHeight="18.0" prefWidth="100.0" text="Id" />
+      <Label layoutX="65.0" layoutY="130.0" prefHeight="18.0" prefWidth="87.0" text="Name" />
+      <Label layoutX="65.0" layoutY="174.0" prefHeight="18.0" prefWidth="87.0" text="Description" />
+      <Label layoutX="65.0" layoutY="208.0" prefHeight="18.0" prefWidth="87.0" text="Photo" />
+      <Button fx:id="btnmodif" layoutX="399.0" layoutY="333.0" mnemonicParsing="false" onMouseClicked="#modifact" prefHeight="26.0" prefWidth="181.0" text="Modifier Category Exercice" />
+      <TextField fx:id="id" layoutX="207.0" layoutY="81.0" />
+      <TextField fx:id="name" layoutX="208.0" layoutY="127.0" />
+      <TextField fx:id="description" layoutX="209.0" layoutY="171.0" />
+      <TextField fx:id="photo" layoutX="210.0" layoutY="205.0" />
+      <TextField fx:id="likedislike" layoutX="209.0" layoutY="251.0" />
+      <Label layoutX="65.0" layoutY="255.0" prefHeight="18.0" prefWidth="87.0" text="Like dislike" />
+   </children>
+</AnchorPane>

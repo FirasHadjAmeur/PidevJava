@@ -1,0 +1,30 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.anchor {
+    -fx-background-image:url('file:/C:/Users/HAYKEL/Desktop/pic');
+    /*-fx-background-color: skyblue, derive(skyblue, 25%); 
+    -fx-background-insets: -20, -10;
+    -fx-background-position: left top, center;*/
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover, auto;
+}
+
+/*.list {
+     -fx-background-image:url('file:/C:/Users/HP/Downloads/istockphoto-531912354-612x612.jpg');
+}*/
+
+.list-view .list-cell:even {
+    /*-fx-background-image:url('file:/C:/Users/HP/Downloads/istockphoto-531912354-612x612.jpg');*/
+    -fx-background-color: black
+    /*-fx-text-fill: black;*/
+}
+.list-view .list-cell:odd {
+    /*-fx-background-image:url('file:/C:/Users/HP/Downloads/istockphoto-531912354-612x612.jpg');*/
+    -fx-background-color: black;
+    /*-fx-text-fill: black;*/
+}
+
+
+

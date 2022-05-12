@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/services/ExerciceCRUD.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/services/PublicationService.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/modeles/Publication.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/modeles/Exercice.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/views/AffichageCategorieController.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/views/InterfaceMembreController.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/views/LivraisonFXMLController.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/services/CategoryexerciceCRUD.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/views/AffichageCommandeController.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/views/Gestion_userController.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/views/AddCategoryexController.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/views/LivreurFXMLController.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/views/PublicationController.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/services/ServiceCategorie.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/views/CommandeFXMLController.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/views/ShowCategoryexerciceController.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/test/FXMainMembre.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/views/AddExerciceController.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/views/CartFXMLController.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/views/DashboardAdminController.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/views/ShowExerciceController.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/modeles/Categoryexercice.java</file>
+            <file>file:/C:/Users/HAYKEL/Desktop/Foruml/src/com/esprit/views/AfficherPublicationsController.java</file>
+        </group>
+    </open-files>
+</project-private>

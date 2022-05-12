@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.StatistiquesController">
+   <children>
+      <PieChart fx:id="pc2" layoutX="156.0" layoutY="38.0" prefHeight="240.0" prefWidth="293.0" />
+      <Label layoutX="156.0" layoutY="323.0" prefHeight="18.0" prefWidth="155.0" text="Statistique d'exercice  : " />
+   </children>
+</AnchorPane>

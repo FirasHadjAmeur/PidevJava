@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="591.0" prefWidth="875.0" style="-fx-background-color: #9EBFAD;" styleClass="anchor" stylesheets="@afficherPublications.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.AfficherPublicationsController">
+   <children>
+      <VBox alignment="BOTTOM_RIGHT" prefHeight="546.0" prefWidth="599.0">
+         <children>
+            <HBox styleClass="header" stylesheets="@afficherPublications.css" translateX="50.0" translateY="15.0">
+               <children>
+                  <Label text="Forum" textFill="#143c68" translateX="20.0">
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="sortBtn" mnemonicParsing="false" onAction="#sortList" text="Trier" translateX="315.0" />
+                  <TextField fx:id="searchTxft" onAction="#searchPublication" prefWidth="100.0" promptText="Rechercher.." translateX="150.0" />
+                  <Button fx:id="addPublicationBtn" mnemonicParsing="false" onAction="#addPublication" text="Ajouter publication" textFill="#2c6fff" translateX="220.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="statisticBtn" mnemonicParsing="false" onAction="#getStatistics" text="Statistiques" translateX="225.0" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <ListView fx:id="listPublications" prefHeight="480.0" prefWidth="740.0" styleClass="list" stylesheets="@afficherPublications.css" translateX="80.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></ListView>
+         </children>
+      </VBox>
+      <Button layoutX="767.0" layoutY="70.0" mnemonicParsing="false" onAction="#returnHomeaction" text="return home" />
+   </children>
+</AnchorPane>

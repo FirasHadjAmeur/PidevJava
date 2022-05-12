@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.AddExerciceController">
+   <children>
+      <Label layoutX="226.0" layoutY="25.0" prefHeight="50.0" prefWidth="204.0" text="Ajouter exercice">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="115.0" layoutY="142.0" prefHeight="18.0" prefWidth="106.0" text="Name" />
+      <Label layoutX="115.0" layoutY="200.0" prefHeight="18.0" prefWidth="106.0" text="Nbrst" />
+      <Label layoutX="115.0" layoutY="257.0" prefHeight="18.0" prefWidth="106.0" text="Photo" />
+      <TextField fx:id="id" layoutX="251.0" layoutY="86.0" visible="false" />
+      <TextField fx:id="name" layoutX="252.0" layoutY="139.0" />
+      <TextField fx:id="nbrst" layoutX="253.0" layoutY="197.0" />
+      <TextField fx:id="photo" layoutX="254.0" layoutY="254.0" />
+      <Button fx:id="btnaddcomm" layoutX="416.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#AddCommande" prefHeight="26.0" prefWidth="169.0" text="Ajouter Exercice" />
+      <TextField fx:id="likedislike" layoutX="254.0" layoutY="294.0" />
+      <TextField fx:id="idcategory" layoutX="254.0" layoutY="334.0" />
+      <Label layoutX="115.0" layoutY="297.0" prefHeight="18.0" prefWidth="106.0" text="Like Dislike" />
+      <Label layoutX="115.0" layoutY="337.0" prefHeight="18.0" prefWidth="106.0" text="Id category id" />
+   </children>
+</AnchorPane>
