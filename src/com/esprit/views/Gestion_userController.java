@@ -44,8 +44,7 @@ public class Gestion_userController implements Initializable {
     private TableColumn<User, String> cl_nom_user;
     @FXML
     private TableColumn<User, String> cl_prenom_user;
-    @FXML
-    private TableColumn<User, Integer> cl_tel_user;
+  
     @FXML
     private TableColumn<User, String> cl_email_user;
     @FXML
@@ -54,8 +53,7 @@ public class Gestion_userController implements Initializable {
     private TextField nom;
     @FXML
     private TextField prenom;
-    @FXML
-    private TextField tel;
+   
     @FXML
     private TextField id;
     @FXML
@@ -72,8 +70,6 @@ public class Gestion_userController implements Initializable {
     private TableColumn<User, String> cl_nom_user1;
     @FXML
     private TableColumn<User, String> cl_prenom_user1;
-    @FXML
-    private TableColumn<User, Integer> cl_tel_user1;
     @FXML
     private TableColumn<User, String> cl_email_user1;
     @FXML
@@ -101,12 +97,12 @@ public class Gestion_userController implements Initializable {
 public  void showUser(){
     ServiceUser sp = new ServiceUser();
     ObservableList<User>list = sp.getAll();
-    cl_id_user.setCellValueFactory(new PropertyValueFactory<>("id_user"));
-    cl_nom_user.setCellValueFactory(new PropertyValueFactory<>("nom_user"));
-    cl_prenom_user.setCellValueFactory(new PropertyValueFactory<>("prenom_user"));
-    cl_tel_user.setCellValueFactory(new PropertyValueFactory<>("tel_user"));
-    cl_email_user.setCellValueFactory(new PropertyValueFactory<>("email_user"));
-    cl_role.setCellValueFactory(new PropertyValueFactory<>("role"));
+    cl_id_user.setCellValueFactory(new PropertyValueFactory<>("id"));
+    cl_nom_user.setCellValueFactory(new PropertyValueFactory<>("last_name"));
+    cl_prenom_user.setCellValueFactory(new PropertyValueFactory<>("name"));
+    //cl_tel_user.setCellValueFactory(new PropertyValueFactory<>("tel_user"));
+    cl_email_user.setCellValueFactory(new PropertyValueFactory<>("email"));
+    cl_role.setCellValueFactory(new PropertyValueFactory<>("roles"));
     table.setItems(list);
 }
     @FXML
@@ -115,7 +111,7 @@ public  void showUser(){
          id.setText(""+user.getId_user());
          nom.setText(""+user.getNom_user());
          prenom.setText(""+user.getPrenom_user());
-         tel.setText(""+user.getTel_user());
+      //   tel.setText(""+user.getTel_user());
          mail.setText(""+user.getEmail_user());
          id.setDisable(true);
          
@@ -129,7 +125,7 @@ public  void showUser(){
        int options = JOptionPane.YES_NO_OPTION;
         int result = JOptionPane.showConfirmDialog(null, "Vous etes sure de Modifier  cet utilisateur" ,"SERIOUS QUESTION", options, 3);
         if (result == JOptionPane.YES_OPTION) {
-         User a = new User(id_u,nom.getText(), prenom.getText(), Integer.parseInt(tel.getText()));
+         User a = new User(id_u,nom.getText(), prenom.getText());
         sp.modifier(a);
                         JOptionPane.showMessageDialog(null, "L'utilisateur a été modifié");
 
@@ -166,12 +162,12 @@ public  void showUser(){
     ServiceUser sp = new ServiceUser();
     
     ObservableList<User>list = sp.getUser(recherche_user.getText());
-    cl_id_user1.setCellValueFactory(new PropertyValueFactory<>("id_user"));
-    cl_nom_user1.setCellValueFactory(new PropertyValueFactory<>("nom_user"));
-    cl_prenom_user1.setCellValueFactory(new PropertyValueFactory<>("prenom_user"));
-    cl_tel_user1.setCellValueFactory(new PropertyValueFactory<>("tel_user"));
-    cl_email_user1.setCellValueFactory(new PropertyValueFactory<>("email_user"));
-    cl_role_user1.setCellValueFactory(new PropertyValueFactory<>("role"));
+     cl_id_user.setCellValueFactory(new PropertyValueFactory<>("id"));
+    cl_nom_user.setCellValueFactory(new PropertyValueFactory<>("last_name"));
+    cl_prenom_user.setCellValueFactory(new PropertyValueFactory<>("name"));
+    //cl_tel_user.setCellValueFactory(new PropertyValueFactory<>("tel_user"));
+    cl_email_user.setCellValueFactory(new PropertyValueFactory<>("email"));
+    cl_role.setCellValueFactory(new PropertyValueFactory<>("roles"));
     table1.setItems(list);
     }
     
@@ -200,7 +196,7 @@ public  void showUser(){
          id.setText(""+user.getId_user());
          nom.setText(""+user.getNom_user());
          prenom.setText(""+user.getPrenom_user());
-         tel.setText(""+user.getTel_user());
+        // tel.setText(""+user.getTel_user());
          mail.setText(""+user.getEmail_user());
          
          id.setDisable(true);
@@ -211,7 +207,7 @@ public  void showUser(){
         id.setText("");
          nom.setText("");
          prenom.setText("");
-         tel.setText("");
+        // tel.setText("");
          mail.setText("");
          id.setDisable(true);
     }

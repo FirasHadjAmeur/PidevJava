@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #3d3242;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.DashboardAdminController">
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="854.0" prefWidth="1266.0" style="-fx-background-color: #171e22;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.DashboardAdminController">
    <children>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/275391527_370191808075140_4696120332349711585_n.png" />
-         </image>
-      </ImageView>
-      <Pane prefHeight="100.0" prefWidth="20.0" />
+      <Button layoutX="33.0" layoutY="612.0" mnemonicParsing="false" onAction="#Actionmatchsbtn" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: dd163b;" text="Matchs" textFill="WHITE">
+         <font>
+            <Font name="Ebrima Bold" size="20.0" />
+         </font>
+         <opaqueInsets>
+            <Insets top="5.0" />
+         </opaqueInsets>
+      </Button>
+      <Pane fx:id="context" layoutX="269.0" layoutY="85.0" prefHeight="749.0" prefWidth="981.0" />
       <Label layoutX="90.0" layoutY="15.0" text="Dashboard" textFill="WHITE">
          <font>
             <Font name="Ebrima Bold" size="40.0" />
@@ -28,50 +31,86 @@
   
 
    
-      <Button layoutX="416.0" layoutY="16.0" mnemonicParsing="false" onAction="#Utilisateur" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: #9400d3;" text="Gérer Utilisateurs" textFill="WHITE">
+      <Button layoutX="33.0" layoutY="78.0" mnemonicParsing="false" onAction="#Utilisateur" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: dd163b;" text="Gérer Utilisateurs" textFill="WHITE">
          <font>
             <Font name="Ebrima Bold" size="20.0" />
          </font>
-         <effect>
-            <Glow />
-         </effect>
+         <opaqueInsets>
+            <Insets top="5.0" />
+         </opaqueInsets>
       </Button>
-      <Button fx:id="logobnt1" layoutX="870.0" layoutY="15.0" mnemonicParsing="false" onAction="#Actionlog" prefHeight="48.0" prefWidth="94.0" style="-fx-background-color: #9400d3;" text="LogOut" textFill="WHITE">
+      <Button fx:id="logobnt1" layoutX="1139.0" layoutY="17.0" mnemonicParsing="false" onAction="#Actionlog" prefHeight="48.0" prefWidth="94.0" style="-fx-background-color: dd163b;" text="LogOut" textFill="WHITE">
          <font>
             <Font name="Ebrima Bold" size="18.0" />
-         </font>
-         <effect>
-            <Glow />
-         </effect></Button>
-      <Button layoutX="416.0" layoutY="95.0" mnemonicParsing="false" onAction="#commande_a" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: #9400d3;" text="Liste commandes" textFill="WHITE">
+         </font></Button>
+      <Button layoutX="33.0" layoutY="154.0" mnemonicParsing="false" onAction="#commande_a" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: dd163b;" text="Liste commandes" textFill="WHITE">
          <font>
             <Font name="Ebrima Bold" size="20.0" />
          </font>
+         <opaqueInsets>
+            <Insets top="5.0" />
+         </opaqueInsets>
       </Button>
-      <Button layoutX="416.0" layoutY="177.0" mnemonicParsing="false" onAction="#livraison_btn" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: #9400d3;" text="Les livraisons" textFill="WHITE">
+      <Button layoutX="33.0" layoutY="230.0" mnemonicParsing="false" onAction="#livraison_btn" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: dd163b;" text="Les livraisons" textFill="WHITE">
          <font>
             <Font name="Ebrima Bold" size="20.0" />
          </font>
+         <opaqueInsets>
+            <Insets top="5.0" />
+         </opaqueInsets>
       </Button>
-      <Button layoutX="416.0" layoutY="257.0" mnemonicParsing="false" onAction="#livreur_btn" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: #9400d3;" text="Les livreurs" textFill="WHITE">
+      <Button layoutX="33.0" layoutY="306.0" mnemonicParsing="false" onAction="#livreur_btn" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: dd163b;" text="Les livreurs" textFill="WHITE">
          <font>
             <Font name="Ebrima Bold" size="20.0" />
          </font>
+         <opaqueInsets>
+            <Insets top="5.0" />
+         </opaqueInsets>
       </Button>
-      <Button layoutX="416.0" layoutY="337.0" mnemonicParsing="false" onAction="#Actioncategbtn" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: #9400d3;" text="Categories" textFill="WHITE">
+      <Button layoutX="33.0" layoutY="460.0" mnemonicParsing="false" onAction="#Actioncategbtn" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: dd163b;" text="Categories" textFill="WHITE">
          <font>
             <Font name="Ebrima Bold" size="20.0" />
          </font>
+         <opaqueInsets>
+            <Insets top="5.0" />
+         </opaqueInsets>
       </Button>
-      <Button layoutX="416.0" layoutY="418.0" mnemonicParsing="false" onAction="#Actionctournoibtn" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: #9400d3;" text="Tournois" textFill="WHITE">
+      <Button layoutX="33.0" layoutY="536.0" mnemonicParsing="false" onAction="#Actionctournoibtn" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: dd163b;" text="Tournois" textFill="WHITE">
          <font>
             <Font name="Ebrima Bold" size="20.0" />
          </font>
+         <opaqueInsets>
+            <Insets top="5.0" />
+         </opaqueInsets>
       </Button>
-      <Button fx:id="equipbtngo" layoutX="416.0" layoutY="500.0" mnemonicParsing="false" onAction="#equipbtngo" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: #9400d3;" text="Equipes" textFill="WHITE">
+      <Button fx:id="equipbtngo" layoutX="33.0" layoutY="764.0" mnemonicParsing="false" onAction="#equipbtngo" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: dd163b;" text="Equipes" textFill="WHITE">
          <font>
             <Font name="Ebrima Bold" size="20.0" />
          </font>
+         <opaqueInsets>
+            <Insets top="5.0" />
+         </opaqueInsets>
+      </Button>
+      <Button layoutX="33.0" layoutY="382.0" mnemonicParsing="false" onAction="#ActionMaterielsbtn" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: dd163b;" text="Matériels" textFill="WHITE">
+         <font>
+            <Font name="Ebrima Bold" size="20.0" />
+         </font>
+         <opaqueInsets>
+            <Insets top="5.0" />
+         </opaqueInsets>
+      </Button>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="33.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/275391527_370191808075140_4696120332349711585_n.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="joueursbtngo" layoutX="33.0" layoutY="688.0" mnemonicParsing="false" onAction="#joueursbtngo" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: dd163b;" text="Joueurs" textFill="WHITE">
+         <font>
+            <Font name="Ebrima Bold" size="20.0" />
+         </font>
+         <opaqueInsets>
+            <Insets top="5.0" />
+         </opaqueInsets>
       </Button>
    
    </children>

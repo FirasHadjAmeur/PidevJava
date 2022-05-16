@@ -5,6 +5,7 @@
  */
 package com.esprit.views;
 
+import animatefx.animation.FadeIn;
 import com.esprit.modeles.Matchs;
 import com.esprit.services.ServiceMatchs;
 import com.esprit.utils.DataSource;
@@ -34,6 +35,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import com.shoppingcart.utils.AlertUtils;
+import javafx.scene.layout.Pane;
 
 /**
  * FXML Controller class
@@ -65,6 +67,8 @@ public class AjouterMatchController implements Initializable {
     Connection connexion = DataSource.getInstance().getCnx();
     @FXML
     private DatePicker inputDateM;
+    @FXML
+    private Pane context;
     /**
      * Initializes the controller class.
      */
@@ -92,7 +96,11 @@ public class AjouterMatchController implements Initializable {
             }
             return res_id;
      }
-    
+     public void setUi(String location) throws IOException {
+        context.getChildren().clear();
+        context.getChildren().add(FXMLLoader.load(this.getClass().
+                getResource(location + ".fxml")));
+    };
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        try {
@@ -165,7 +173,7 @@ public class AjouterMatchController implements Initializable {
                     score_b
             );
            MatchCrud.add(match);
-           retour(event);
+        //   retour(event);
            AlertUtils.makeSuccessNotification("Match Ajouté !");
             
             } 
@@ -177,7 +185,7 @@ public class AjouterMatchController implements Initializable {
 
     @FXML
     private void retour(ActionEvent event) throws IOException {
-         Parent root = FXMLLoader.load(getClass().getResource("AfficherMatchs.fxml"));
+        /*Parent root = FXMLLoader.load(getClass().getResource("AfficherMatchs.fxml"));
 
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 
@@ -185,7 +193,10 @@ public class AjouterMatchController implements Initializable {
 
         stage.setScene(scene);
 
-        stage.show();
+        stage.show();*/
+                
+        
+   
     }
     
 }

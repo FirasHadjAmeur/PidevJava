@@ -9,23 +9,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #3d3242;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.Gestion_userController">
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #171e22;" stylesheets="@MainStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.Gestion_userController">
    <children>
       <TableView fx:id="table" layoutX="264.0" layoutY="98.0" onMouseClicked="#handleMouseAction" prefHeight="407.0" prefWidth="437.0" AnchorPane.bottomAnchor="97.0" AnchorPane.leftAnchor="264.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="98.0">
         <columns>
           <TableColumn fx:id="cl_id_user" prefWidth="41.0" text="ID" visible="false" />
           <TableColumn fx:id="cl_nom_user" prefWidth="108.79998779296875" text="NOM" />
             <TableColumn fx:id="cl_prenom_user" prefWidth="87.99993896484375" text="PRENOM" />
-            <TableColumn fx:id="cl_tel_user" prefWidth="86.39996337890625" text="TELEPHONE" />
             <TableColumn fx:id="cl_email_user" prefWidth="247.20001220703125" text="E-MAIL" />
             <TableColumn fx:id="cl_role" prefWidth="149.5999755859375" text="ROLE" />
         </columns>
       </TableView>
-      <TextField fx:id="prenom" layoutX="40.0" layoutY="150.0" prefHeight="25.0" prefWidth="190.0" promptText="Prenom.." />
-      <TextField fx:id="nom" layoutX="40.0" layoutY="230.0" prefHeight="25.0" prefWidth="190.0" promptText="Nom.." />
-      <TextField fx:id="tel" layoutX="40.0" layoutY="310.0" prefHeight="25.0" prefWidth="190.0" promptText="telephone.." />
+      <TextField fx:id="prenom" layoutX="40.0" layoutY="150.0" prefHeight="25.0" prefWidth="190.0" promptText="Prenom.." styleClass="background-gray" stylesheets="@MainStyle.css" />
+      <TextField fx:id="nom" layoutX="40.0" layoutY="230.0" prefHeight="25.0" prefWidth="190.0" promptText="Nom.." styleClass="background-gray" stylesheets="@MainStyle.css" />
       <TextField fx:id="id" layoutX="40.0" layoutY="70.0" prefHeight="25.0" prefWidth="193.0" promptText="id" visible="false" />
-      <Button fx:id="up" layoutX="20.0" layoutY="520.0" mnemonicParsing="false" onAction="#update" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #9400d3;" text="Update" textFill="WHITE" AnchorPane.bottomAnchor="45.200000000000045">
+      <Button fx:id="up" layoutX="20.0" layoutY="520.0" mnemonicParsing="false" onAction="#update" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #dd163b;" text="Update" textFill="WHITE" AnchorPane.bottomAnchor="45.200000000000045">
          <font>
             <Font name="Ebrima Bold" size="16.0" />
          </font>
@@ -33,7 +31,7 @@
             <Glow />
          </effect>
       </Button>
-      <Button fx:id="del" layoutX="550.0" layoutY="530.0" mnemonicParsing="false" onAction="#delete" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #9400d3;" text="Delete" textFill="WHITE" AnchorPane.bottomAnchor="36.200000000000045">
+      <Button fx:id="del" layoutX="550.0" layoutY="530.0" mnemonicParsing="false" onAction="#delete" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #dd163b;" text="Delete" textFill="WHITE" AnchorPane.bottomAnchor="36.200000000000045">
          <font>
             <Font name="Ebrima Bold" size="16.0" />
          </font>
@@ -51,33 +49,27 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="100.0" layoutY="270.0" prefHeight="27.0" prefWidth="138.0" text="TELEPHONE :" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="recherche_user" layoutX="730.0" layoutY="30.0" onAction="#EnterRecherche" prefHeight="40.0" prefWidth="200.0" promptText="Rechercher....">
+      <TextField fx:id="recherche_user" layoutX="730.0" layoutY="30.0" onAction="#EnterRecherche" prefHeight="40.0" prefWidth="200.0" promptText="Rechercher...." styleClass="background-gray">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TableView fx:id="table1" layoutX="266.0" layoutY="100.0" onMouseClicked="#handleMouseAction1" prefHeight="405.0" prefWidth="719.0" AnchorPane.bottomAnchor="95.0" AnchorPane.leftAnchor="266.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="100.0">
+      <TableView fx:id="table1" layoutX="266.0" layoutY="100.0" onMouseClicked="#handleMouseAction1" prefHeight="405.0" prefWidth="719.0" styleClass="background-gray" stylesheets="@MainStyle.css" AnchorPane.bottomAnchor="95.0" AnchorPane.leftAnchor="266.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="100.0">
          <columns>
             <TableColumn fx:id="cl_id_user1" prefWidth="47.20001220703125" text="Id_user" visible="false" />
             <TableColumn fx:id="cl_nom_user1" prefWidth="108.0" text="NOM" />
             <TableColumn fx:id="cl_prenom_user1" prefWidth="88.0" text="PRENOM" />
-            <TableColumn fx:id="cl_tel_user1" prefWidth="85.60003662109375" text="TELEPHONE" />
             <TableColumn fx:id="cl_email_user1" prefWidth="247.199951171875" text="E-MAIL" />
             <TableColumn fx:id="cl_role_user1" prefWidth="152.800048828125" text="ROLE" />
          </columns>
       </TableView>
-      <TextField fx:id="mail" layoutX="40.0" layoutY="470.0" prefHeight="25.0" prefWidth="190.0" promptText="E-mail.." />
+      <TextField fx:id="mail" layoutX="40.0" layoutY="470.0" prefHeight="25.0" prefWidth="190.0" promptText="E-mail.." styleClass="background-gray" stylesheets="@MainStyle.css" />
       <Label layoutX="100.0" layoutY="430.0" prefHeight="27.0" prefWidth="138.0" text="EMAIL :" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="260.0" layoutY="50.0" mnemonicParsing="false" onAction="#diselect" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #9400d3;" text="Refresh" textFill="WHITE">
+      <Button layoutX="260.0" layoutY="50.0" mnemonicParsing="false" onAction="#diselect" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #dd163b;" text="Refresh" textFill="WHITE">
          <font>
             <Font name="Ebrima Bold" size="16.0" />
          </font>
@@ -89,7 +81,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="pdf" layoutX="400.0" layoutY="530.0" mnemonicParsing="false" onAction="#generatePDF" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #9400d3;" text="Imprimer" textFill="WHITE">
+      <Button fx:id="pdf" layoutX="400.0" layoutY="530.0" mnemonicParsing="false" onAction="#generatePDF" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #dd163b;" text="Imprimer" textFill="WHITE">
          <font>
             <Font name="Ebrima Bold" size="16.0" />
          </font>

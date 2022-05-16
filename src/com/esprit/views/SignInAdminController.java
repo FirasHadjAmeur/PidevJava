@@ -53,7 +53,7 @@ public class SignInAdminController implements Initializable {
      */
     @FXML
     private void action_login_admin(ActionEvent event) {
-        String sql = "Select * from user where email_user = ? and mdp_user =? and role='admin'  ";
+        String sql = "Select * from user where email = ? and password =? and roles='admin'  ";
         cn = DataSource.getInstance().getCnx();
         try {
             String newMD = "";

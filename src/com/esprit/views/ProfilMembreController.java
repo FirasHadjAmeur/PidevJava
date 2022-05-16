@@ -58,8 +58,10 @@ public class ProfilMembreController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    /*
     @FXML
     private TextField tel;
+    */
     @FXML
     private Button upd;
     @FXML
@@ -91,7 +93,7 @@ public class ProfilMembreController implements Initializable {
        int options = JOptionPane.YES_NO_OPTION;
         int result = JOptionPane.showConfirmDialog(null, "Vous êtes sure de Modifier  cet utilisateur" ,"SERIOUS QUESTION", options, 3);
         if (result == JOptionPane.YES_OPTION) {
-         User a = new User(id_u,nom.getText(),prenom.getText(), Integer.parseInt(tel.getText()) ,  mail.getText() , scr.getText() );
+         User a = new User(id_u,nom.getText(),prenom.getText(),  mail.getText() , scr.getText() );
          sp.modifier(a);
        Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("L'utilisateur a été modifié avec succés !");
@@ -170,7 +172,7 @@ public class ProfilMembreController implements Initializable {
     public void Select(){
         
          mc = DataSource.getInstance().getCnx();
-        String sql="SELECT * FROM user where id_user = "+idcli+" " ;
+        String sql="SELECT * FROM user where id = "+idcli+" " ;
 
         try{
         ste2 = mc.prepareStatement(sql);
@@ -179,12 +181,11 @@ public class ProfilMembreController implements Initializable {
            while(rs.next()){             
               
                        id.setText(""+rs.getInt(1));
-                       nom.setText(rs.getString(2));
-                       prenom.setText(rs.getString(3));
-                       tel.setText(rs.getString(4));
-                       mail.setText(rs.getString(5));
-                       scr.setText(rs.getString("pdp"));
-                       String path2= rs.getString("pdp");
+                       mail.setText(rs.getString(2));
+                       prenom.setText(rs.getString(4));
+                       nom.setText(rs.getString(5));
+                       scr.setText(rs.getString("image"));
+                       String path2= rs.getString("image");
       
 
        
@@ -234,4 +235,3 @@ public class ProfilMembreController implements Initializable {
     }
          
     }
-    

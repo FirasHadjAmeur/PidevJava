@@ -8,9 +8,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" fx:id="root" prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.LivreurFXMLController">
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="700.0" prefWidth="950.0" style="-fx-background-color: #171e22;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.LivreurFXMLController">
    <children>
-      <TableView fx:id="table_livreur" layoutX="25.0" layoutY="107.0" onMouseClicked="#getSelected" prefHeight="441.0" prefWidth="897.0">
+      <TableView fx:id="table_livreur" layoutX="25.0" layoutY="107.0" onMouseClicked="#getSelected" prefHeight="441.0" prefWidth="897.0" style="-fx-background-color: #989898;">
         <columns>
           <TableColumn fx:id="IdLivreur" prefWidth="75.0" text="IdLivreur" visible="false" />
           <TableColumn fx:id="NomLivreur" prefWidth="111.0" text="Nom Livreur " />
@@ -20,15 +20,27 @@
             <TableColumn fx:id="AdresseLivreur" prefWidth="185.0" text="Adresse" />
         </columns>
       </TableView>
-           <Text fill="#1586ff" layoutX="25.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table Livreur :" wrappingWidth="176.5361328125">
+           <Text fill="WHITE" layoutX="387.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Livreurs" textAlignment="CENTER" wrappingWidth="176.5361328125">
          <font>
-            <Font size="24.0" />
+            <Font name="System Bold" size="34.0" />
          </font></Text>
-      <Button layoutX="641.0" layoutY="594.0" mnemonicParsing="false" onAction="#SupprimerLivreur" style="-fx-background-color: #f12626;" text="Supprimer" textFill="WHITE" />
-      <Button fx:id="ajouterliv" layoutX="226.0" layoutY="594.0" mnemonicParsing="false" onAction="#ajouterLiv" prefHeight="31.0" prefWidth="89.0" style="-fx-background-color: #33c601;" text="Ajouter" textFill="#eeeeee" />
-      <Button fx:id="modifierliv" layoutX="414.0" layoutY="594.0" mnemonicParsing="false" onAction="#modifierLiv" prefHeight="31.0" prefWidth="89.0" style="-fx-background-color: #f4be1c;" text="Modifier" textFill="WHITE" />
-      <TextField fx:id="ftr" layoutX="365.0" layoutY="43.0" onKeyTyped="#recherche" style="-fx-background-color: #8ca4f1;" />
+      <Button layoutX="816.0" layoutY="597.0" mnemonicParsing="false" onAction="#SupprimerLivreur" prefHeight="45.0" prefWidth="106.0" style="-fx-background-color: #dd163b;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Button fx:id="ajouterliv" layoutX="493.0" layoutY="597.0" mnemonicParsing="false" onAction="#ajouterLiv" prefHeight="45.0" prefWidth="106.0" style="-fx-background-color: #dd163b;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Button fx:id="modifierliv" layoutX="656.0" layoutY="597.0" mnemonicParsing="false" onAction="#modifierLiv" prefHeight="45.0" prefWidth="106.0" style="-fx-background-color: #dd163b;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <TextField fx:id="ftr" layoutX="590.0" layoutY="70.0" onKeyTyped="#recherche" style="-fx-background-color: #171e22;" />
       <TextField fx:id="idm" disable="true" layoutX="365.0" layoutY="645.0" visible="false" />
-      <Button layoutX="27.0" layoutY="597.0" mnemonicParsing="false" onAction="#return_home" prefHeight="26.0" prefWidth="143.0" text="return home" />
+      <Button layoutX="25.0" layoutY="25.0" mnemonicParsing="false" onAction="#return_home" prefHeight="45.0" prefWidth="113.0" style="-fx-background-color: #dd163b;" text="Return" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
    </children>
 </AnchorPane>

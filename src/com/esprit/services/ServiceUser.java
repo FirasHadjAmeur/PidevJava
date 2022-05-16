@@ -54,7 +54,7 @@ public class ServiceUser implements IService<User> {
     Connection cnx = DataSource.getInstance().getCnx();
        public int existeMail(User u) throws SQLException {
         Statement s = cnx.createStatement();
-        ResultSet rs = s.executeQuery("SELECT COUNT(*) from user WHERE email_user = '" + u.getEmail_user() + "'");
+        ResultSet rs = s.executeQuery("SELECT COUNT(*) from user WHERE email = '" + u.getEmail_user() + "'");
         int size = 0;
         rs.next();
         size = rs.getInt(1);
@@ -63,23 +63,22 @@ public class ServiceUser implements IService<User> {
     @Override
     public void ajouter(User u) {
 
-        String req = "INSERT INTO `user`(`nom_user`, `prenom_user`,  `tel_user`,`email_user`, `mdp_user`, `role`,`pdp` )VALUES (?,?,?,?,?,?,?) ";
+        String req = "INSERT INTO user`(email`, password, name, last_name, roles, image)VALUES (?,?,?,?,?,?) ";
         try {
             String mdp = Hash();
 
            
             PreparedStatement ps = cnx.prepareStatement(req);
-            ps.setString(1, u.getNom_user());
-            ps.setString(2, u.getPrenom_user());
-            ps.setInt(3, u.getTel_user());
-            ps.setString(4, u.getEmail_user());
-            ps.setString(5, mdp + u.getMdp_user());
+            ps.setString(1, u.getEmail_user());
+            ps.setString(2, mdp + u.getMdp_user());
+            ps.setString(3, u.getPrenom_user());
+            ps.setString(4, u.getNom_user());
             if (u instanceof Admin) {
-                ps.setString(6, "admin");
-                ps.setString(7, "");
+                ps.setString(5, "admin");
+                ps.setString(6, "");
             } else if (u instanceof Membre) {
-                ps.setString(6, "membre");
-                ps.setString(7, u.getPdp());
+                ps.setString(5, "[]");
+                ps.setString(6, u.getPdp());
             } else {
                 return;
             }
@@ -95,18 +94,17 @@ public class ServiceUser implements IService<User> {
         ObservableList<User> list = FXCollections.observableArrayList();
         try {
 
-            String req = "SELECT * FROM `user`";
+            String req = "SELECT * FROM user";
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
                 User u = new User();
-                u.setId_user(rs.getInt("id_user"));
-                u.setNom_user(rs.getString("nom_user"));
-                u.setPrenom_user(rs.getString("prenom_user"));
-                u.setTel_user(rs.getInt("tel_user"));
-                u.setEmail_user(rs.getString("email_user"));
-                u.setMdp_user(rs.getString("mdp_user"));
-                u.setRole(rs.getString("role"));
+                u.setId_user(rs.getInt("id"));
+                u.setNom_user(rs.getString("name"));
+                u.setPrenom_user(rs.getString("last_name"));
+                u.setEmail_user(rs.getString("email"));
+                u.setMdp_user(rs.getString("password"));
+                u.setRole(rs.getString("roles"));
 
                 list.add(u);
             }
@@ -129,12 +127,10 @@ public void generatePDF(File file) throws IOException, DocumentException {
         table.addCell(c2);
         PdfPCell c3 = new PdfPCell(new Phrase("PRENOM"));
         table.addCell(c3);
-        PdfPCell c4 = new PdfPCell(new Phrase("TELEPHONE"));
+        PdfPCell c4 = new PdfPCell(new Phrase("EMAIL"));
         table.addCell(c4);
-        PdfPCell c5 = new PdfPCell(new Phrase("EMAIL"));
+        PdfPCell c5 = new PdfPCell(new Phrase("ROLE"));
         table.addCell(c5);
-        PdfPCell c6 = new PdfPCell(new Phrase("ROLE"));
-        table.addCell(c6);
 
         try {
             PdfWriter writer = PdfWriter.getInstance(doc, new FileOutputStream(file.getPath()));
@@ -150,8 +146,6 @@ liste.stream().map((item) -> {
       table.addCell(nom_user);
       String prenom_user = item.getPrenom_user();
       table.addCell(prenom_user);
-      int tel_user = item.getTel_user();
-      table.addCell(String.valueOf(tel_user));
       String email_user = item.getEmail_user();
       table.addCell(email_user);
       
@@ -171,12 +165,11 @@ liste.stream().map((item) -> {
 
     @Override
     public boolean modifier(User u) {
-        String req = "update user set nom_user = ? , prenom_user = ? ,tel_user = ?  where id_user = ? ";
+        String req = "update user set name = ? , last_name = ?  where id = ? ";
         try {
             PreparedStatement ps = cnx.prepareStatement(req);
             ps.setString(1, u.getNom_user());
             ps.setString(2, u.getPrenom_user());
-            ps.setInt(3, u.getTel_user());
             ps.setInt(4, u.getId_user());
             ps.executeUpdate();
             System.out.println("user Modified !");
@@ -188,7 +181,7 @@ liste.stream().map((item) -> {
 
     @Override
     public boolean supprimer(User u) {
-        String req = "DELETE FROM user WHERE id_user = ? ";
+        String req = "DELETE FROM user WHERE id = ? ";
         try {
             PreparedStatement ps = cnx.prepareStatement(req);
             ps.setInt(1, u.getId_user());
@@ -222,19 +215,18 @@ liste.stream().map((item) -> {
         ObservableList<User> list = FXCollections.observableArrayList();
         try {
 
-            String req = "SELECT * FROM `user` where nom_user like '%" + nom + "%' ";
+            String req = "SELECT * FROM user where name like '%" + nom + "%' ";
             PreparedStatement st = cnx.prepareStatement(req);
 
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
                 User u = new User();
-                u.setId_user(rs.getInt("id_user"));
-                u.setNom_user(rs.getString("nom_user"));
-                u.setPrenom_user(rs.getString("prenom_user"));
-                u.setTel_user(rs.getInt("tel_user"));
-                u.setEmail_user(rs.getString("email_user"));
-                u.setMdp_user(rs.getString("mdp_user"));
-                u.setRole(rs.getString("role"));
+                u.setId_user(rs.getInt("id"));
+                u.setNom_user(rs.getString("name"));
+                u.setPrenom_user(rs.getString("last_name"));
+                u.setEmail_user(rs.getString("email"));
+                u.setMdp_user(rs.getString("password"));
+                u.setRole(rs.getString("roles"));
 
                 list.add(u);
             }
@@ -324,7 +316,7 @@ liste.stream().map((item) -> {
         PreparedStatement stmt = null;
         ResultSet rst = null;
         try {
-            String sql = "SELECT * FROM user WHERE email_user=?";
+            String sql = "SELECT * FROM user WHERE email=?";
             stmt = cnx.prepareStatement(sql);
             stmt.setString(1, email);
             rst = stmt.executeQuery();
@@ -383,7 +375,7 @@ liste.stream().map((item) -> {
         PreparedStatement stmt;
         try {
 
-            String sql = "UPDATE user SET mdp_user=? WHERE email_user=?";
+            String sql = "UPDATE user SET password=? WHERE email=?";
             stmt = cnx.prepareStatement(sql);
             stmt.setString(1, password);
             stmt.setString(2, mail);
@@ -409,16 +401,16 @@ liste.stream().map((item) -> {
     public User findById(int id) {
         User r = new User();
         try {
-            String req = "SELECT * FROM user where id_user=" + id;
+            String req = "SELECT * FROM user where id=" + id;
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
 
             while (rs.next()) {
 
-                r.setId_user(rs.getInt("id_user"));
-                r.setNom_user(rs.getString("nom_user"));
-                r.setPrenom_user(rs.getString("prenom_user"));
-                r.setEmail_user(rs.getString("email_user"));
+                r.setId_user(rs.getInt("id"));
+                r.setNom_user(rs.getString("name"));
+                r.setPrenom_user(rs.getString("last_name"));
+                r.setEmail_user(rs.getString("email"));
 
             }
         } catch (SQLException ex) {

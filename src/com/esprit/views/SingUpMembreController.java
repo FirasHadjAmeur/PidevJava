@@ -59,8 +59,9 @@ public class SingUpMembreController implements Initializable {
     private TextField prenom_membre;
     @FXML
     private TextField nom_membre;
-    @FXML
+    /*@FXML
     private TextField tel_membre;
+    */
     @FXML
     private TextField email_membre;
     @FXML
@@ -81,8 +82,6 @@ public class SingUpMembreController implements Initializable {
     private Parent root;
     
     private ImageView img;
-    @FXML
-    private ImageView qr;
     /**
      * Initializes the controller class.
      */
@@ -127,23 +126,6 @@ public class SingUpMembreController implements Initializable {
             return;
         }
         
-        if (!(tel_membre.getText().matches("\\d{8}")) && tel_membre.getText().isEmpty() ) {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Erreur");
-            alert.setContentText("What 's your telephone number ?");
-            alert.showAndWait();
-            return;
-
-        } 
-        if (tel_membre.getText().length()!=8) 
-        {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Erreur");
-            alert.setContentText("Invalid phone number ");
-            alert.showAndWait();
-            return;
-
-        }
           if (verifemail(email_membre.getText())== false) {
 
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -177,7 +159,7 @@ public class SingUpMembreController implements Initializable {
             alert.showAndWait();
             return;
         }
-        User m = new Membre(prenom_membre.getText(), nom_membre.getText(), Integer.parseInt(tel_membre.getText()), email_membre.getText(), mdp_membre.getText(), "src\\imagesUser\\" +email_membre.getText()+".png" );    
+        User m = new Membre(prenom_membre.getText(), nom_membre.getText(), email_membre.getText(), mdp_membre.getText(), "src\\imagesUser\\" +email_membre.getText()+".png" );    
       if(sp.existeMail(m)==0){
       sp.ajouter(m);
       
@@ -276,14 +258,3 @@ public class SingUpMembreController implements Initializable {
     }
         
 }
-
-
-
-
-
-
-
-
-
-
-

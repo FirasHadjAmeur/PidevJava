@@ -46,10 +46,6 @@
                      <font>
                         <Font size="15.0" />
                      </font></TextField>
-                  <TextField fx:id="tel_membre" layoutX="110.0" layoutY="190.0" prefHeight="30.0" prefWidth="300.0" promptText="Telephone..." AnchorPane.leftAnchor="114.0">
-                     <font>
-                        <Font size="15.0" />
-                     </font></TextField>
                   <TextField fx:id="email_membre" layoutX="110.0" layoutY="240.0" prefHeight="30.0" prefWidth="300.0" promptText="Email..." AnchorPane.leftAnchor="114.0">
                      <font>
                         <Font size="15.0" />
@@ -67,11 +63,6 @@
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="80.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../assets/id-card.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="80.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../assets/icons8-téléphone-24.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="80.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">

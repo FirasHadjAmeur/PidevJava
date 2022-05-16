@@ -40,6 +40,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import com.shoppingcart.utils.AlertUtils;
+import javafx.scene.layout.Pane;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -92,6 +94,8 @@ public class AfficherMatchsController implements Initializable {
     Connection connexion = DataSource.getInstance().getCnx();
     @FXML
     private Button btnRetour;
+    @FXML
+    private Pane panee;
     
     public String getNomEquipeByID(int id) throws SQLException{
          String xx = "";
@@ -121,9 +125,16 @@ public class AfficherMatchsController implements Initializable {
            return xx;
      }    
     
+
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       matchActuel = null;
+        try {  
+            loadDate();
+        } catch (SQLException ex) {
+            Logger.getLogger(AfficherMatchsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        matchActuel = null;
         btnModifier.setDisable(true);
         btnSupprimer.setDisable(true);
         Date date = new Date();
@@ -183,12 +194,22 @@ public class AfficherMatchsController implements Initializable {
 
     @FXML
     private void ajouterMatch(ActionEvent event) throws IOException {
-         Parent page1 = FXMLLoader.load(getClass().getResource("AjouterMatch.fxml"));
+      /*   Parent page1 = FXMLLoader.load(getClass().getResource("AjouterMatch.fxml"));
         Scene scene = new Scene(page1);
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.show(); 
+        stage.show(); */
+         try {
+            Parent parent = FXMLLoader.load(getClass().getResource("AjouterMatch.fxml"));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            //stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException ex) {
+            ex.getMessage();
+        }
     }
 
     @FXML

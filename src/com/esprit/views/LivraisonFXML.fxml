@@ -7,9 +7,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" fx:id="root" prefHeight="666.0" prefWidth="1117.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.LivraisonFXMLController">
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="666.0" prefWidth="1117.0" style="-fx-background-color: #171e22;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.LivraisonFXMLController">
    <children>
-      <TableView fx:id="table_livraison" layoutX="33.0" layoutY="101.0" prefHeight="464.0" prefWidth="1051.0">
+      <TableView fx:id="table_livraison" layoutX="33.0" layoutY="101.0" prefHeight="464.0" prefWidth="1051.0" style="-fx-background-color: #989898;">
          <columns>
             <TableColumn fx:id="livraisonid" prefWidth="111.0" text="ID Livraison" visible="false" />
             <TableColumn fx:id="commandeId" prefWidth="116.0" text="ID Commande" visible="false" />
@@ -22,13 +22,22 @@
             <TableColumn fx:id="total" prefWidth="146.0" text="Total " />
          </columns>
       </TableView>
-      <Button layoutX="983.0" layoutY="581.0" mnemonicParsing="false" onAction="#pdfreport" prefHeight="54.0" prefWidth="101.0" style="-fx-background-color: #ff7708;" text="Telecharger&#10;  PDF" textAlignment="CENTER" textFill="WHITE" />
-      <Text fill="#1586ff" layoutX="43.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table Livraison :">
+      <Button layoutX="983.0" layoutY="581.0" mnemonicParsing="false" onAction="#pdfreport" prefHeight="54.0" prefWidth="101.0" style="-fx-background-color: #dd163b;" text="Telecharger&#10;  PDF" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font size="24.0" />
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Text fill="WHITE" layoutX="479.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Livraisons">
+         <font>
+            <Font name="System Bold" size="34.0" />
          </font>
       </Text>
-      <Button layoutX="33.0" layoutY="581.0" mnemonicParsing="false" onAction="#trier" prefHeight="54.0" prefWidth="101.0" style="-fx-background-color: #f4be1c;" text="Tri Par&#10;  Date" textFill="WHITE" />
-      <Button layoutX="186.0" layoutY="596.0" mnemonicParsing="false" onAction="#return_home" prefHeight="26.0" prefWidth="140.0" text="Return home" />
+      <Button layoutX="855.0" layoutY="581.0" mnemonicParsing="false" onAction="#trier" prefHeight="54.0" prefWidth="101.0" style="-fx-background-color: #dd163b;" text="Tri Par&#10;  Date" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Button layoutX="33.0" layoutY="21.0" mnemonicParsing="false" onAction="#return_home" prefHeight="45.0" prefWidth="101.0" style="-fx-background-color: #dd163b;" text="Return" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
    </children>
 </AnchorPane>

@@ -5,42 +5,53 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" minHeight="555.0" minWidth="699.0" prefHeight="555.0" prefWidth="699.0" style="-fx-background-color: #3d3242;" stylesheets="@MainStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.AfficherTournoisController">
+<AnchorPane id="AnchorPane" minHeight="555.0" minWidth="699.0" prefHeight="555.0" prefWidth="699.0" style="-fx-background-color: #171e22;" stylesheets="@MainStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.AfficherTournoisController">
    <children>
       <AnchorPane minHeight="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <StackPane prefHeight="70.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="0.0" />
-            <Button fx:id="btnAjout" layoutX="536.0" layoutY="10.0" mnemonicParsing="false" onAction="#ajouterTounoi" prefHeight="30.0" prefWidth="160.0" text="Ajouter un tournoi" textAlignment="CENTER" wrapText="true" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
-               <styleClass>
-                  <String fx:value="white-button" />
-                  <String fx:value="border-gray" />
-               </styleClass>
-            </Button>
-            <Text boundsType="LOGICAL_VERTICAL_CENTER" layoutX="160.0" layoutY="38.0" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Tournois" textAlignment="JUSTIFY" textOrigin="CENTER">
+            <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="264.0" layoutY="29.0" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Tournois" textAlignment="CENTER" textOrigin="CENTER">
                <font>
                   <Font name="Arial Bold" size="40.0" />
                </font>
             </Text>
-            <Button fx:id="btnretour" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onAction="#retour" prefHeight="30.0" prefWidth="91.0" style="-fx-background-color: white;" text="retour" textAlignment="CENTER" wrapText="true">
+            <Button fx:id="btnretour" layoutX="40.0" layoutY="15.0" mnemonicParsing="false" onAction="#retour" prefHeight="30.0" prefWidth="91.0" style="-fx-background-color: dd163b;" text="retour" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAjout1" layoutX="568.0" layoutY="19.0" mnemonicParsing="false" onAction="#Affichermatchs" prefHeight="58.0" prefWidth="111.0" style="-fx-background-color: 171e22;" text="Matchs" textAlignment="CENTER" wrapText="true">
                <styleClass>
                   <String fx:value="white-button" />
                   <String fx:value="border-gray" />
                </styleClass>
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <effect>
+                  <Lighting diffuseConstant="1.25" specularExponent="40.0" surfaceScale="0.0">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
             </Button>
          </children>
-         <styleClass>
-            <String fx:value="background-light" />
-            <String fx:value="border-gray" />
-         </styleClass>
       </AnchorPane>
       <AnchorPane fx:id="anchorPane" prefHeight="465.0" prefWidth="522.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="368.0" AnchorPane.topAnchor="80.0">
          <children>
-            <TableView fx:id="idTableau" layoutX="38.0" layoutY="58.0" onMouseClicked="#changerTournoiActuel" prefHeight="407.0" prefWidth="352.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="58.0">
+            <TableView fx:id="idTableau" layoutX="38.0" layoutY="58.0" onMouseClicked="#changerTournoiActuel" prefHeight="407.0" prefWidth="352.0" style="-fx-background-color: 171e22;" styleClass="background-gray" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="58.0">
                <columns>
                   <TableColumn fx:id="columnNom" prefWidth="95.0" text="Nom" />
                   <TableColumn fx:id="columnDateDeb" prefWidth="96.0" text="Date debut" />
@@ -48,22 +59,27 @@
                   <TableColumn fx:id="columnPrime" minWidth="80.0" prefWidth="63.0" text="Prime" />
                </columns>
             </TableView>
-            <TextField fx:id="txrecherche" layoutX="44.0" layoutY="10.0" onAction="#RechercheT" prefHeight="31.0" prefWidth="193.0" promptText="Rechercher un tournoi" styleClass="form-control-white" />
+            <TextField fx:id="txrecherche" layoutX="44.0" layoutY="10.0" onAction="#RechercheT" prefHeight="31.0" prefWidth="193.0" promptText="Rechercher un tournoi" style="-fx-background-color: 171e22;" styleClass="background-gray" />
          </children>
         
       </AnchorPane>
       <AnchorPane layoutY="133.0" prefHeight="392.0" prefWidth="125.0" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="133.0">
          <children>
-            <Button fx:id="btnModifier" layoutX="27.19999999999999" layoutY="10.0" mnemonicParsing="false" onAction="#Modifier" prefHeight="51.0" prefWidth="98.0" style="-fx-background-color: #9400d3;" styleClass="success-button" stylesheets="@MainStyle.css" text="Modifier" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0" />
-            <Button fx:id="btnSupprimer" layoutX="27.19999999999999" layoutY="75.0" mnemonicParsing="false" onAction="#supp" prefHeight="51.0" prefWidth="98.0" style="-fx-background-color: #9400d3;" styleClass="success-button" stylesheets="@MainStyle.css" text="Supprimer" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0" />
+            <Button fx:id="btnModifier" layoutX="20.0" layoutY="34.0" mnemonicParsing="false" onAction="#Modifier" prefHeight="51.0" prefWidth="104.0" style="-fx-background-color: dd163b;" styleClass="success-button" stylesheets="@MainStyle.css" text="Modifier" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="34.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Button>
+            <Button fx:id="btnSupprimer" layoutX="22.0" layoutY="95.0" mnemonicParsing="false" onAction="#supp" prefHeight="51.0" prefWidth="104.0" style="-fx-background-color: dd163b;" styleClass="success-button" stylesheets="@MainStyle.css" text="Supprimer" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="95.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Button>
             <Text fx:id="textTournoiIdActuel" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
-            <Button fx:id="btnAjout1" layoutX="13.0" layoutY="-57.0" mnemonicParsing="false" onAction="#Affichermatchs" prefHeight="58.0" prefWidth="111.0" text="Afficher tous les matchs" textAlignment="CENTER" wrapText="true">
-               <styleClass>
-                  <String fx:value="white-button" />
-                  <String fx:value="border-gray" />
-               </styleClass>
-            </Button>
          </children>
       </AnchorPane>
+      <Button fx:id="btnAjout" layoutX="561.0" layoutY="110.0" mnemonicParsing="false" onAction="#ajouterTounoi" prefHeight="47.0" prefWidth="104.0" style="-fx-background-color: dd163b;" text="Ajouter" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="110.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

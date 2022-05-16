@@ -10,9 +10,9 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.AffichageMaterielController">
    <children>
-      <AnchorPane id="AnchorPane" fx:id="anchorpaneAfficherCategorie" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="1209.0" style="-fx-background-color: #d1e0e0;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+      <AnchorPane id="AnchorPane" fx:id="anchorpaneAfficherCategorie" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="1209.0" style="-fx-background-color: #171e22;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
          <children>
-            <AnchorPane layoutX="14.0" layoutY="19.0" prefHeight="635.0" prefWidth="1209.0" style="-fx-background-color: #d1e0e0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane layoutX="14.0" layoutY="19.0" prefHeight="635.0" prefWidth="1209.0" style="-fx-background-color: #171e22;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   
                   
@@ -23,12 +23,12 @@
                               <Font name="System Italic" size="31.0" />
                            </font>
                         </Label>
-                        <JFXButton fx:id="ajouter" buttonType="RAISED" layoutX="326.0" layoutY="556.0" onAction="#ajouter" style="-fx-background-color: #66ccff;" text="Ajouter" textFill="WHITE" AnchorPane.bottomAnchor="42.0" AnchorPane.rightAnchor="783.0">
+                        <JFXButton fx:id="ajouter" buttonType="RAISED" layoutX="326.0" layoutY="556.0" onAction="#ajouter" style="-fx-background-color: #dd163b;" text="Ajouter" textFill="WHITE" AnchorPane.bottomAnchor="42.0" AnchorPane.rightAnchor="783.0">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="20.0" />
                      </font>
                   </JFXButton>
-                        <JFXButton fx:id="modifier" buttonType="RAISED" layoutX="605.0" layoutY="556.0" onAction="#modifier" style="-fx-background-color: #ff6600;" text="Modifier" textFill="WHITE" AnchorPane.bottomAnchor="42.0" AnchorPane.rightAnchor="496.0">
+                        <JFXButton fx:id="modifier" buttonType="RAISED" layoutX="605.0" layoutY="556.0" onAction="#modifier" style="-fx-background-color: #dd163b;" text="Modifier" textFill="WHITE" AnchorPane.bottomAnchor="42.0" AnchorPane.rightAnchor="496.0">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="20.0" />
                      </font>
@@ -48,12 +48,12 @@
                         <Font name="Arial Rounded MT Bold" size="15.0" />
                      </font>
                   </JFXTextField>
-                  <JFXButton fx:id="supprimer" buttonType="RAISED" layoutX="879.0" layoutY="553.0" onAction="#supprimer" style="-fx-background-color: #ff0000;" text="Supprimer" textFill="WHITE" AnchorPane.bottomAnchor="38.0" AnchorPane.rightAnchor="210.0">
+                  <JFXButton fx:id="supprimer" buttonType="RAISED" layoutX="879.0" layoutY="553.0" onAction="#supprimer" style="-fx-background-color: #dd163b;" text="Supprimer" textFill="WHITE" AnchorPane.bottomAnchor="38.0" AnchorPane.rightAnchor="210.0">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" layoutX="770.0" layoutY="22.0" onAction="#back" prefHeight="31.0" prefWidth="142.0" style="-fx-background-color: #00cc99;" text="Retourner" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                  <JFXButton buttonType="RAISED" layoutX="770.0" layoutY="22.0" onAction="#back" prefHeight="31.0" prefWidth="142.0" style="-fx-background-color: #dd163b;" text="Retourner" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" wrapText="true">
                      <font>
                         <Font name="System Bold Italic" size="15.0" />
                      </font>

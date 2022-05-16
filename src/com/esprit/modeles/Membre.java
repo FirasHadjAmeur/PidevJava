@@ -11,12 +11,12 @@ package com.esprit.modeles;
  */
 public class Membre extends User {
 
-    public Membre(int id_user, String nom_user, String prenom_user, int tel_user, String email_user, String mdp_user) {
-        super(id_user, nom_user, prenom_user, tel_user, email_user, mdp_user);
+    public Membre(int id_user, String nom_user, String prenom_user, String email_user, String mdp_user) {
+        super(id_user, nom_user, prenom_user, email_user, mdp_user);
     }
 
-    public Membre(String nom_user, String prenom_user, int tel_user, String email_user, String mdp_user) {
-        super(nom_user, prenom_user, tel_user, email_user, mdp_user);
+    public Membre(String nom_user, String prenom_user, String email_user, String mdp_user) {
+        super(nom_user, prenom_user, email_user, mdp_user);
     }
 
     public Membre() {
@@ -26,12 +26,12 @@ public class Membre extends User {
         super(email_user, mdp_user);
     }
 
-    public Membre(int id_user, String nom_user, String prenom_user, int tel_user, String email_user, String mdp_user, String pdp) {
-        super(id_user, nom_user, prenom_user, tel_user, email_user, mdp_user, pdp);
+    public Membre(int id_user, String nom_user, String prenom_user, String email_user, String mdp_user, String pdp) {
+        super(id_user, nom_user, prenom_user, email_user, mdp_user, pdp);
     }
 
-    public Membre(String nom_user, String prenom_user, int tel_user, String email_user, String mdp_user, String pdp) {
-        super(nom_user, prenom_user, tel_user, email_user, mdp_user, pdp);
+    public Membre(String nom_user, String prenom_user, String email_user, String mdp_user, String pdp) {
+        super(nom_user, prenom_user, email_user, mdp_user, pdp);
     }
     
     
